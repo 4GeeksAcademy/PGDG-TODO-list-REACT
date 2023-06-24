@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 
 
+
+
 const Form = () => {
 
     
@@ -21,11 +23,14 @@ console.log(tarea);
 console.log(listaTareas);
 
 
+
+
+
 // LISTA DE TAREAS
 
 let listaHTML = listaTareas.map(function(comanda, index) { 
     
-    return (<li className="tarea list-group-item  pb-3 pt-3" key={index}>{comanda}<i className="cruz fa-regular fa-circle-xmark float-end mt-2 mb-2"></i></li>)     
+    return (<li className="tarea list-group-item  pb-3 pt-3" key={index}>{comanda}<button className="botonBorrado float-end" onClick={borrarTarea}><i className="cruz fa-regular fa-circle-xmark  mt-2 mb-2"></i></button></li>)     
 })
 
 
@@ -35,7 +40,9 @@ let tareasPendientes = listaTareas.length;
 
 // BORRADO DE LISTADO
 
-
+function borrarTarea(){
+    alert("Has borrado una tarea");
+}
 
 
 
