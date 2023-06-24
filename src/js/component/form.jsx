@@ -20,27 +20,38 @@ const Form = () => {
 console.log(tarea); 
 console.log(listaTareas);
 
+
 // LISTA DE TAREAS
 
 let listaHTML = listaTareas.map(function(comanda, index) { 
     
-    return (<li className="list-group-item" key={index}>{comanda}</li>)     
+    return (<li className="tarea list-group-item  pb-3 pt-3" key={index}>{comanda}<i className="cruz fa-regular fa-circle-xmark float-end mt-2 mb-2"></i></li>)     
 })
 
+
+// TAREAS PENDIENTES 
 let tareasPendientes = listaTareas.length;
-       
+
+
+// BORRADO DE LISTADO
+
+
+
+
+
 
     return (
     <>
-
-        <form id="Form" onSubmit={handleSubmit}>
-		    <input type="text" className=""  placeholder="Añade una nueva tarea" onChange={(e) => setTarea(e.target.value)}></input>
-        </form>
-        <ul>
-            
-            {listaHTML}
-        </ul>
-        <p>Quedan {tareasPendientes} pendientes</p>
+        <div className="contenedor container m-auto">
+            <form id="Form" onSubmit={handleSubmit} >
+                <input type="text" className="float-left p-4 pb-0"  placeholder=" &#x1F589; Añade una nueva tarea " onChange={(e) => setTarea(e.target.value)}></input>
+            </form>
+            <ul className="p-4">
+                
+                {listaHTML}
+            </ul>
+            <p className="tareasPendientes">Quedan {tareasPendientes} pendientes</p>
+        </div>
     </>
 	);
 };

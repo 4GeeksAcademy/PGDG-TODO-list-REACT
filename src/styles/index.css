@@ -1,12 +1,36 @@
+body{
+    background-color: beige;
+}
 
-/* 
+.contenedor{
+background-color: rgb(255, 255, 255);
+width: 30vw;
+border-style: solid;
+border-radius: 7px;
+border-color: rgb(218, 218, 218);
+border-width: 2px;
+}
+input{
+    border:none;
+    outline: none;
+    width:100%;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.tarea{
+    border:rgb(223, 223, 223);
+    border-width: 1px;
+    border-style: none none solid none;
+}
+.tareasPendientes{
+    font-size:13px;
+    color:grey;
+}
 
-*/
+.cruz{
+    color:white;
+}
+
+
+  .tarea:hover .cruz { /* this works */
+    color: rgb(158, 4, 4);
+  }
