@@ -42,15 +42,24 @@ let tareasPendientes = listaTareas.length;
 
     return (
     <>
-        <div className="contenedor container m-auto">
-            <form id="Form" onSubmit={handleSubmit} >
-                <input type="text" className="float-left p-4 pb-0"  placeholder=" &#x1F589; Añade una nueva tarea " onChange={(e) => setTarea(e.target.value)}></input>
-            </form>
-            <ul className="p-4 mb-0">
+
+        <h1 className="text-center mt-3">Lista de tareas</h1>
+        <div className="libreta">
+            <div className="contenedor container m-auto">
                 
-                {listaHTML}
-            </ul>
-            <p className="tareasPendientes ps-4 pe-4">Quedan {tareasPendientes} pendientes</p>
+                <form className="formulario" id="Form" onSubmit={handleSubmit} >
+                    <input type="text" className="float-left p-4 pb-0"  placeholder=" &#x1F589; Añade una nueva tarea " onChange={(e) => setTarea(e.target.value)}></input>
+                </form>
+                <hr/>
+                <ul className="p-4 pt-0 mb-0">
+                    
+                    {listaHTML}
+                </ul>
+                <p className="tareasPendientes ps-4 pe-4">Quedan {tareasPendientes} tareas pendientes</p>
+                
+            </div>
+            <div className="hojaAtras1 m-auto"></div>
+            <div className="hojaAtras2 m-auto"></div>
         </div>
     </>
 	);
