@@ -30,7 +30,7 @@ console.log(listaTareas);
 
 let listaHTML = listaTareas.map(function(comanda, index) { 
     
-    return (<li className="tarea list-group-item  pb-3 pt-3" key={index}>{comanda}<button className="botonBorrado float-end" onClick={borrarTarea}><i className="cruz fa-regular fa-circle-xmark  mt-2 mb-2"></i></button></li>)     
+    return (<li className="tarea list-group-item  pb-3 pt-3" key={index}>{comanda}<button className="botonBorrado float-end" onClick={()=> borrarTarea(comanda)}><i className="cruz fa-regular fa-circle-xmark  mt-2 mb-2"></i></button></li>)     
 })
 
 
@@ -40,8 +40,12 @@ let tareasPendientes = listaTareas.length;
 
 // BORRADO DE LISTADO
 
-function borrarTarea(){
-    alert("Has borrado una tarea");
+function borrarTarea(tarea){
+    let tareaActual = tarea;
+    let tareaBorrada = listaTareas.filter((tarea) => tarea != tareaActual);
+    setListaTareas(tareaBorrada);
+    // console.log(tarea);
+    // console.log(tareaBorrada);
 }
 
 

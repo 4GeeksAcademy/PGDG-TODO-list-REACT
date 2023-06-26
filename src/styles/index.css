@@ -51,7 +51,7 @@ button{
 }
 
 
-  .tarea:hover .cruz { /* this works */
+  .tarea:hover .cruz { 
     color: rgb(158, 4, 4);
   }
 
